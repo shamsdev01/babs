@@ -3,95 +3,45 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
 import Courses from '@/components/Courses';
-import RegistrationForm from '@/components/RegistrationForm';
-import SuccessMessage from '@/components/SuccessMessage';
+import Testimonials from '../components/Testimonials';
+import ExpectValues from '../components/ExpectValues';
+import PhotoGallery from '../components/PhotoGallery';
+import FAQ from '../components/FAQ';
+import Footer from '../components/Footer';
+import Partnership from '../components/Partnership';
 
-interface FormData {
-  fullName: string;
-  email: string;
-  phoneNumber: string;
-  preferredCourse: string;
-  timingOption: string;
-  cohortMonth: string;
-}
 
-const Home: React.FC = () => {
-  const [selectedCourse, setSelectedCourse] = useState<string>('');
-  const [showRegistration, setShowRegistration] = useState<boolean>(false);
-  const [showSuccess, setShowSuccess] = useState<boolean>(false);
-  const [submittedFormData, setSubmittedFormData] = useState<FormData | undefined>();
-
-  const handleGetStartedClick = () => {
-    const coursesSection = document.getElementById('courses');
-    if (coursesSection) {
-      coursesSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleCourseSelect = (courseId: string) => {
-    setSelectedCourse(courseId);
-    // Auto-scroll to registration after course selection
-    setTimeout(() => {
-      const registrationSection = document.getElementById('registration');
-      if (registrationSection) {
-        registrationSection.scrollIntoView({ behavior: 'smooth' });
-      }
-      setShowRegistration(true);
-    }, 300);
-  };
-
-  const handleFormSubmit = async (formData: FormData) => {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setSubmittedFormData(formData);
-    setShowSuccess(true);
-    setShowRegistration(false);
-  };
-
-  const handleSuccessClose = () => {
-    setShowSuccess(false);
-    setSubmittedFormData(undefined);
-    setSelectedCourse('');
-    setShowRegistration(false);
-  };
-
+function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar onGetStartedClick={handleGetStartedClick} />
-      
-      <Hero onGetStartedClick={handleGetStartedClick} />
-      
-      <div id="about">
-        <About />
-      </div>
-      
-      <div id="courses">
-        <Courses 
-          selectedCourse={selectedCourse} 
-          onCourseSelect={handleCourseSelect} 
-        />
-      </div>
-      
-      {showRegistration && (
-        <div id="registration">
-          <RegistrationForm 
-            selectedCourse={selectedCourse}
-            selectedCohort=""
-            onSubmit={handleFormSubmit}
-          />
+      <Navbar />
+      <div className="space-y-16">
+        <div className="animate-fade-in opacity-0 animate-delay-0">
+          <Hero />
         </div>
-      )}
-
-      <SuccessMessage 
-        isVisible={showSuccess}
-        onClose={handleSuccessClose}
-        formData={submittedFormData}
-      />
+        <div className="animate-fade-in opacity-0 animate-delay-50">
+          <Partnership />
+        </div>
+        <div id="courses" className="animate-fade-in opacity-0 animate-delay-100">
+          <Courses />
+        </div>
+        <div id="testimonials" className="animate-fade-in opacity-0 animate-delay-200">
+          <Testimonials />
+        </div>
+        <div id="expect-values" className="animate-fade-in opacity-0 animate-delay-300">
+          <ExpectValues />
+        </div>
+        <div id="photo-gallery" className="animate-fade-in opacity-0 animate-delay-400">
+          <PhotoGallery />
+        </div>
+        <div id="faq" className="animate-fade-in opacity-0 animate-delay-500">
+          <FAQ />
+        </div>
+      </div>
+      <Footer />
     </div>
   );
-};
+}
 
 export default Home;
