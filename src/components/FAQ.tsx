@@ -37,9 +37,7 @@ function FAQ() {
         <div className="inline-flex items-center px-3 py-1 bg-blue-100 border border-blue-300 rounded-full text-blue-800 text-sm font-medium mb-4">
           Frequently Asked Questions
         </div>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 mb-10 leading-tight">
-          About Babtech Course Programs
-        </h2>
+       
         <div className="text-left mt-8 bg-white rounded-2xl shadow-md border border-blue-100 divide-y divide-blue-50">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
