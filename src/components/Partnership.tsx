@@ -16,9 +16,9 @@ function Partnership() {
         <GraduationCap className="w-32 h-32 text-blue-300" aria-hidden="true" />
       </div>
       <div className="relative z-10 flex flex-col items-center justify-center">
-        <img src="/images/Canada_logo.png" alt="Skills Development Council Canada Logo" className="h-24 sm:h-32 md:h-40 w-auto mb-6 rounded-lg shadow mx-auto" />
+        <img src="/images/Canada logo.jpg" alt="Skills Development Council Canada Logo" className="h-24 sm:h-32 md:h-40 w-auto mb-6 rounded-lg shadow mx-auto" />
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-blue-900 mb-5 leading-tight">
-          Babtech computers is a learning partner to the Skills Development Council Canada
+          We are a learning partner to the Skills Development Council Canada
         </h2>
         <p className="text-lg sm:text-xl text-blue-800 max-w-2xl mx-auto leading-relaxed mb-2">
           This partnership provides you with a globally recognised certificate to help you unlock remote opportunities and gives you the credibility and confidence to thrive on the global scale.
