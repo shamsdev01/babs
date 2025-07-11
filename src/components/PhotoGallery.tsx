@@ -2,27 +2,28 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Image as ImageIcon } from 'lucide-react';
 
 const images = [
-  {
-    src: '/images/HeroBg.jpg',
-    alt: 'Babtech Event Hero',
-  },
-  {
-    src: '/images/BabtechComputersLogo.png',
-    alt: 'Babtech Logo',
-  },
+  { src: '/images/pic_1.jpg', alt: 'Babtech Event Photo 1' },
+  { src: '/images/pic_2.jpg', alt: 'Babtech Event Photo 2' },
+  { src: '/images/pic_3.jpg', alt: 'Babtech Event Photo 3' },
+  { src: '/images/pic_4.jpg', alt: 'Babtech Event Photo 4' },
+  { src: '/images/pic_5.jpeg', alt: 'Babtech Event Photo 5' },
+  { src: '/images/pic_6.jpeg', alt: 'Babtech Event Photo 6' },
+  { src: '/images/HeroBg.jpg', alt: 'Babtech Hero Background' },
 ];
 
 function PhotoGallery() {
   const [current, setCurrent] = useState(0);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<any>(null);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => {
+    timeoutRef.current = window.setTimeout(() => {
       setCurrent((prev) => (prev + 1) % images.length);
     }, 5000);
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     };
   }, [current]);
 
@@ -37,20 +38,12 @@ function PhotoGallery() {
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-10 leading-tight">
           Moments from Babtech
         </h2>
-        <div className="relative flex justify-center items-center h-72 sm:h-96 mb-8">
-          {images.length > 0 ? (
-            <img
-              src={images[current].src}
-              alt={images[current].alt}
-              className="object-cover rounded-2xl shadow-lg w-full h-full max-h-96 mx-auto transition-all duration-700"
-              style={{ maxWidth: '700px' }}
-            />
-          ) : (
-            <div className="flex flex-col items-center justify-center w-full h-full bg-blue-50 rounded-2xl">
-              <ImageIcon className="w-16 h-16 text-blue-200 mb-4" />
-              <span className="text-blue-400">No images available</span>
-            </div>
-          )}
+        <div className="relative flex justify-center items-center h-72 sm:h-[28rem] lg:h-[40rem] mb-8">
+          <img
+            src={images[current].src}
+            alt={images[current].alt}
+            className="object-cover rounded-2xl shadow-lg w-full sm:w-[36rem] lg:w-[56rem] h-full max-h-[40rem] mx-auto transition-all duration-700"
+          />
         </div>
         <div className="flex justify-center items-center gap-3 mt-4">
           {images.map((_, idx) => (

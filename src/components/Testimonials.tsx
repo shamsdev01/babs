@@ -3,30 +3,34 @@ import { Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores harum nam officia ipsum id molestias, et, ad cupiditate aut corrupti doloribus esse quas deleniti dolorem consequuntur velit quae praesentium fugiat?.',
-    author: 'John Doe',
+    text: "It's an amazing place to develop your software skills with good facilities and a conducive environment. I'm undergoing a full stack development program. Although, I haven't completed it, it's showing good value for the money.",
+    author: 'Sharif Ajani',
   },
   {
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores harum nam officia ipsum id molestias, et, ad cupiditate aut corrupti doloribus esse quas deleniti dolorem consequuntur velit quae praesentium fugiat?.',
-    author: 'John Doe',
+    text: "It's a place that help you grow your career in tech and in an holistic way( in all aspects at Babtech Computers you get top notch service and a wonderful experience",
+    author: 'Oladeni Taofikat',
   },
   {
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores harum nam officia ipsum id molestias, et, ad cupiditate aut corrupti doloribus esse quas deleniti dolorem consequuntur velit quae praesentium fugiat?.',
-    author: 'John Doe',
+    text: "When it comes to I T professional courses or switching career into Tech. Babtech computers is the best among the rest. Am proud to be among certified Babtech data analyst student.",
+    author: 'Waheed Ayanwale',
+  },  {
+    text: "Currently under going a course at Babtech, Babtech is the perfect place to level up your tech skill",
+    author: 'Ajasa Lateefah',
   },
 ];
 
 function Testimonials() {
   const [current, setCurrent] = useState(0);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<any>(null);
 
   useEffect(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => {
+    timeoutRef.current = window.setTimeout(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length);
     }, 6000);
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     };
   }, [current]);
 
@@ -43,7 +47,7 @@ function Testimonials() {
         </h2>
         <div className="relative">
           <div className="flex flex-col items-center justify-center">
-            <Quote className="w-10 h-10 text-blue-400 mb-4" />
+            {/* <Quote className="w-10 h-10 text-blue-400 mb-4" /> */}
             <p className="text-xl sm:text-2xl text-gray-700 font-medium mb-6 max-w-2xl mx-auto">
               "{testimonials[current].text}"
             </p>
