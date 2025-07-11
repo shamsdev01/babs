@@ -23,7 +23,7 @@ function Partnership() {
           Babtech computers is a learning partner to the Skills Development Council Canada
         </h2>
         <p className="text-lg sm:text-xl text-blue-800 max-w-2xl mx-auto leading-relaxed mb-2">
-          Unlock global opportunities through industry-relevant training and internationally recognized certification. Our programs combine practical learning with career-focused mentorship, giving you the credibility and confidence to compete on a global scale.
+        This partnership provides you with a globally recognised certificate to help you unlock remote opportunities and gives you the credibility and confidence to thrive on the global scale.
         </p>
       </div>
     </section>
