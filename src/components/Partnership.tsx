@@ -20,7 +20,7 @@ function Partnership() {
           BABTECH COMPUTERS X SKILLS DEVELOPMENT COUNCIL CANADA
         </div>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-blue-900 mb-5 leading-tight">
-          Babtech computers is a learning partner with the Skills Development Council Canada
+          Babtech computers is a learning partner to the Skills Development Council Canada
         </h2>
         <p className="text-lg sm:text-xl text-blue-800 max-w-2xl mx-auto leading-relaxed mb-2">
           Unlock global opportunities through industry-relevant training and internationally recognized certification. Our programs combine practical learning with career-focused mentorship, giving you the credibility and confidence to compete on a global scale.
