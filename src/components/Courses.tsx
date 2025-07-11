@@ -46,7 +46,7 @@ function Courses() {
             Build Your Future in Tech
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Choose a program, learn from experts, and get certified for global opportunities.
+            Choose a program, enjoy student discount, learn from experts, and get certified for global opportunities.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
