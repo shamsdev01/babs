@@ -18,8 +18,8 @@ function Footer() {
     <footer className="bg-blue-900 text-white pt-12 pb-0 px-4">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8 border-b border-blue-800 pb-8">
         <div className="flex items-center gap-3">
-          <img src="/images/BabtechComputersLogo.png" alt="Babtech Logo" className="h-10 w-auto rounded-lg bg-white p-1" />
-          <span className="font-bold text-xl tracking-wide">Babtech</span>
+          <img src="/images/BabtechComputersLogo.png" alt="Babtech Logo" className="h-10 w-auto rounded-lg  p-1" />
+          
         </div>
         <nav className="flex gap-8 text-base font-medium">
           {menus.map((menu) => (
