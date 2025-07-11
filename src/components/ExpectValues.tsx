@@ -24,11 +24,9 @@ function ExpectValues() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <div className="inline-flex items-center px-3 py-1 bg-blue-100 border border-blue-300 rounded-full text-blue-800 text-sm font-medium mb-4">
-            What to Expect
+            We Deliver Value
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 mb-6 leading-tight">
-            Your Babtech Experience
-          </h2>
+        
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16">
           {expect.map((item, idx) => (
