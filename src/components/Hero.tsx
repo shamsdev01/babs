@@ -25,21 +25,25 @@ const slides = [
 
 function Hero() {
   const [current, setCurrent] = useState(0);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<any>(null);
 
   useEffect(() => {
+    // Only run on client
+    if (typeof window === 'undefined') return;
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => {
+    timeoutRef.current = window.setTimeout(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 6000);
-    return () => timeoutRef.current && clearTimeout(timeoutRef.current);
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    };
   }, [current]);
 
   const goToSlide = (idx: number) => setCurrent(idx);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden" id="hero">
-
       <div className="absolute inset-0">
         <img 
           src="/images/HeroBg.jpg" 
@@ -49,7 +53,6 @@ function Hero() {
         <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-blue-900/60"></div>
       </div>
       <div className="relative max-w-3xl mx-auto text-center px-4 sm:px-6 lg:px-8 z-10">
-    
         <div className="relative">
           <div className="transition-all duration-700">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-8 leading-tight min-h-[3.5rem] text-center">
@@ -59,7 +62,6 @@ function Hero() {
               {slides[current].description}
             </p>
           </div>
-     
           <div className="flex justify-center items-center gap-3 mt-6">
             {slides.map((_, idx) => (
               <button
@@ -74,6 +76,6 @@ function Hero() {
       </div>
     </section>
   );
-};
+}
 
 export default Hero;
