@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="bg-blue-900 text-white pt-12 pb-0 px-4">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 border-b border-blue-800 pb-8">
-        <div className="flex items-center gap-3 justify-center md:justify-start w-full md:w-auto">
+        <div className="flex items-center gap-3 justify-center md:justify-start w-full md:w-auto bg-white rounded-lg p-2">
           <img src="/images/BabtechComputersLogo.png" alt="Babtech Logo" className="h-10 w-auto rounded-lg p-1" />
         </div>
         <div className="text-center md:text-right mt-6 md:mt-0 w-full md:w-auto">
